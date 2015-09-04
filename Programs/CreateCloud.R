@@ -2,16 +2,12 @@ library(twitteR); library(SnowballC); library(tm); library(RColorBrewer); librar
 setwd('/Users/elundquist/Repositories/tweecloud')
 
 # set desired search term here (should be lowercase)
-sterm <- '@replyall'
+sterm <- 'tebow'
 
 # 1. set up twitter authentication so that I can run queries through the API
 #---------------------------------------------------------------------------
 
-ckey <- 'xL9d4kpL5JbwJFxI5EzZYHIFo'
-csec <- 'oQESIqSguD8kpUJfGf8DXAagyN20FbRZjc5FiFuaum6DWXyRzK'
-atok <- '1519794499-LfIJJBakv5KDmuVX2igAknZNq3mTykkL8qaWW15'
-asec <- 'on9JTxqKCSBlRCRUBcY3VBAqvwClhcIIeKDsDMQACeIAk'
-
+source('./Programs/authentication.r')
 setup_twitter_oauth(ckey, csec, atok, asec)
 
 # 2. search twitter for mentions of a specific podcast and convert text to a char vector
